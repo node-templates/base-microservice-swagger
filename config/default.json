@@ -1,4 +1,9 @@
 {
+    "api": {
+      "port": 10010,
+      "controllerPath": "./src/controllers",
+      "swaggerFile": "./contracts/api.yml"  
+    },
     "build": {
         // Javascript linting
         "linting": {

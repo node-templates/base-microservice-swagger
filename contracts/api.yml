@@ -1,0 +1,54 @@
+swagger: '2.0'
+info:
+  title: Math API
+  description: Why work it out, when a service can do it for you?
+  version: "1.0.0"
+# array of all schemes that your API supports
+schemes:
+  - http   
+  - https
+produces:
+  - application/json
+paths:
+  /add/{x}/{y}:
+    x-swagger-router-controller: addition # .js file under /src/controlers
+    post:
+      summary: Add numbers
+      operationId: addNumbers             # Exported function to call
+      description: |
+        The add endpoint computes the sum of the two specified numeric values.
+      parameters:
+        - name: x
+          in: path
+          description: First input
+          required: true
+          type: number
+        - name: y
+          in: path
+          description: Second input
+          required: true
+          type: number
+      tags:
+        - Basic Arithmetic Operations
+      responses:
+        "200":
+          description: 
+            Numbers added up succesfully.
+          schema:
+            $ref: '#/definitions/ScalarResponse'
+        "500":
+          description: 
+            Numbers could not be added succesfully.
+          schema:
+            $ref: '#/definitions/Error'
+        
+definitions:
+  ScalarResponse:
+    description: Single value outcome of mathematic operation.
+    type: number
+  Error:
+    type: object
+    properties:
+      message:
+        description: Descriptive message.
+        type: string
