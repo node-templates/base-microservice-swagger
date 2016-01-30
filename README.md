@@ -31,7 +31,7 @@ The steps to get up and running are:
     node index
 * Point your browser to http://localhost:10010/
     
-At runtime dynamic clients can read the Swagger Metadata from http://localhost:10010/api-docs and
+At runtime dynamic clients can read the Swagger metadata from http://localhost:10010/api-docs and
 the full Swagger-UI interactive testing page can be found at http://localhost:10010/docs
 
 ## Licencing
