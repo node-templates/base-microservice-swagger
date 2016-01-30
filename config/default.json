@@ -6,7 +6,7 @@
             "formatter": "stylish",
             
             "paths": [
-                "./lib/**/*.js"
+                "./src/**/*.js"
             ],
             "testPaths": [
               "./tst/**/*.js"
@@ -43,7 +43,7 @@
                 "includeUntested": true,
 
                 // Instrument all application code
-                "instrumentPath": "./lib/**/*.js",
+                "instrumentPath": "./src/**/*.js",
 
                 // Path to write coverage HTML report to.
                 "outputPath": "./docs/code-coverage",

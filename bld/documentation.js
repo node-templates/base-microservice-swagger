@@ -5,7 +5,7 @@ const esdoc = require('gulp-esdoc');
 const gulp = require('gulp');
 
 module.exports = function documentationBuilder() {
-  return gulp.src('./lib')
+  return gulp.src('./src')
     .pipe(esdoc({
       destination: config.get('build.documentation.outputPath'),
       unexportIdentifier: config.get('build.documentation.unexportedIdentifiers'),
