@@ -1,6 +1,6 @@
 # base-microservice-swagger
 ![Travis-CI Build](https://travis-ci.org/node-templates/base-microservice-swagger.svg?branch=master)
-![Prod Dependencies](https://david-dm.org/node-templates/base-microservice-swaggerstatus.svg)
+![Prod Dependencies](https://david-dm.org/node-templates/base-microservice-swagger/status.svg)
 ![Dev Dependencies](https://david-dm.org/node-templates/base-microservice-swagger/dev-status.svg)
 
 ## Node.js Swagger REST API Starter Pack
