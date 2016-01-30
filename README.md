@@ -27,8 +27,10 @@ Additional concepts being demonstrated include:
 The steps to get up and running are:
 
 * Run the following commands
-    npm install
-    node index
+
+        npm install
+        node index
+
 * Point your browser to http://localhost:10010/
     
 At runtime dynamic clients can read the Swagger metadata from http://localhost:10010/api-docs and
