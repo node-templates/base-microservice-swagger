@@ -34,3 +34,7 @@ node_modules
 
 # Code Documentation
 docs
+
+# Generated Code
+src/controllers
+src/definitions
