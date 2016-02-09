@@ -1,7 +1,7 @@
 'use strict';
 const config = require('config');
 const gulp = require('gulp');
-const generate = require('../../gulp-swagger-generator');
+const generate = require('gulp-swagger-codegen');
 
 module.exports = () =>
   gulp.src([config.get('api.swaggerFile')])
