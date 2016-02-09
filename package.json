@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/node-templates/base-npm-library-es6#readme",
   "devDependencies": {
-    "eslint-config-airbnb": "^4.0.0",
+    "eslint-config-airbnb": "^5.0.0",
     "eslint-plugin-react": "^3.16.1",
     "gulp": "^3.9.0",
     "gulp-esdoc": "^0.2.0",
@@ -47,7 +47,7 @@
     "config": "^1.19.0",
     "connect": "^3.4.1",
     "fiddleware": "0.0.2",
-    "swagger-tools": "^0.9.11",
+    "swagger-tools": "^0.9.14",
     "yamljs": "^0.2.4"
   }
 }

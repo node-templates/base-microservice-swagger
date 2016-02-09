@@ -5,6 +5,26 @@
       "swaggerFile": "./contracts/api.yml"  
     },
     "build": {
+        // Swagger Code Generation
+        "generateSwagger": {
+          "perDefinition": {
+            "../gulp-swagger-generator/templates/es6/definition.hbs": {
+              "target": "./definitions",
+              "extension": ".js"
+            }
+          },
+          "perPath": {
+            "../gulp-swagger-generator/templates/es6/swagger-tools-controller.hbs": {
+              "target": "./controllers",
+              "extension": ".js",
+              "operations": ["get", "put", "post", "delete"],
+              "implementationPath": "../implementation",
+              "defsRelativeToController": "../definitions",
+              "groupBy": "x-swagger-router-controller"
+            }
+          }
+        },
+
         // Javascript linting
         "linting": {
             // Console formatter
