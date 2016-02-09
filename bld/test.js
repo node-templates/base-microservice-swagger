@@ -1,6 +1,5 @@
 'use strict';
 
-const babel = require('babel-core/register');
 const config = require('config');
 const gulp = require('gulp');
 const istanbul = require('gulp-istanbul');
@@ -8,12 +7,9 @@ const mocha = require('gulp-mocha');
 
 module.exports = function runMochaTests() {
   // Run our unit tests on babelified code.
+  console.log('starting');
   return gulp.src([config.get('build.testing.findPattern')])
-    .pipe(mocha({
-      compilers: {
-        js: babel,
-      },
-    }))
+    .pipe(mocha())
 
     // Output the HTML reports for the test coverage
     .pipe(istanbul.writeReports({

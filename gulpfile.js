@@ -19,6 +19,6 @@ gulp.task('generate', generate);
 gulp.task('lint-lib', lint);
 gulp.task('lint-tests', lintTests);
 gulp.task('lint', ['lint-lib', 'lint-tests']);
-gulp.task('instrument-coverage', instrument);
-gulp.task('test', ['instrument-coverage', 'generate'], test);
+gulp.task('instrument-coverage', ['generate'], instrument);
+gulp.task('test', ['instrument-coverage'], test);
 gulp.task('default', ['docs', 'lint', 'test']);

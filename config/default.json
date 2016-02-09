@@ -31,7 +31,9 @@
             "formatter": "stylish",
             
             "paths": [
-                "./src/**/*.js"
+                "./src/**/*.js",
+                "!./src/controllers/**/*.js",
+                "!./src/definitions/**/*.js",
             ],
             "testPaths": [
               "./tst/**/*.js"
@@ -68,7 +70,11 @@
                 "includeUntested": true,
 
                 // Instrument all application code
-                "instrumentPath": "./src/**/*.js",
+                "instrumentPaths": [
+                  "./src/**/*.js",
+                  "!./src/controllers/**/*.js",
+                  "!./src/definitions/**/*.js",
+                ],
 
                 // Path to write coverage HTML report to.
                 "outputPath": "./docs/code-coverage",

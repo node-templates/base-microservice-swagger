@@ -20,6 +20,7 @@ initializeSwagger(swaggerObject, (middleware) => {
     controllers: controllerPath,
   }));
   app.use(middleware.swaggerUi());
+  /* istanbul ignore next - Don't bother covering this code */
   app.use((error, req, res, next) => {
     res.json({
       message: error,
