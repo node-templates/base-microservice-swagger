@@ -1,6 +1,6 @@
 {
-  "name": "base-npm-library-es6",
-  "version": "0.0.2",
+  "name": "base-microservice-swagger",
+  "version": "0.0.3",
   "description": "Node.js Application Starter Pack for ES6 NPM Library",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/node-templates/base-npm-library-es6.git"
+    "url": "git+https://github.com/node-templates/base-microservice-swagger.git"
   },
   "keywords": [
     "nodejs",
@@ -29,9 +29,9 @@
   "author": "Steve Gray",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/node-templates/base-npm-library-es6/issues"
+    "url": "https://github.com/node-templates/base-microservice-swagger/issues"
   },
-  "homepage": "https://github.com/node-templates/base-npm-library-es6#readme",
+  "homepage": "https://github.com/node-templates/base-microservice-swagger#readme",
   "devDependencies": {
     "eslint-config-airbnb": "^5.0.0",
     "eslint-plugin-react": "^3.16.1",
@@ -40,6 +40,7 @@
     "gulp-eslint": "^1.1.1",
     "gulp-istanbul": "^0.10.3",
     "gulp-mocha": "^2.2.0",
+    "gulp-swagger-codegen": "0.0.3",
     "should": "^8.2.1",
     "supertest": "^1.1.0"
   },
