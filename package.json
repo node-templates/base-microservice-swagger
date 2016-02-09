@@ -35,13 +35,13 @@
   "devDependencies": {
     "eslint-config-airbnb": "^5.0.0",
     "eslint-plugin-react": "^3.16.1",
-    "gulp": "^3.9.0",
+    "gulp": "^3.9.1",
     "gulp-esdoc": "^0.2.0",
     "gulp-eslint": "^1.1.1",
     "gulp-istanbul": "^0.10.3",
     "gulp-mocha": "^2.2.0",
     "gulp-swagger-codegen": "0.0.3",
-    "should": "^8.2.1",
+    "should": "^8.2.2",
     "supertest": "^1.1.0"
   },
   "dependencies": {
