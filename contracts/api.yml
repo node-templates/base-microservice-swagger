@@ -10,39 +10,112 @@ schemes:
 produces:
   - application/json
 paths:
-  /add/{x}/{y}:
-    x-swagger-router-controller: addition # .js file under /src/controlers
+  /add:
+    x-swagger-router-controller: addition
     post:
-      summary: Add numbers
+      summary: Add numbers using a structure for input.
+      operationId: addNumbersStructured             # Exported function to call
+      description: |
+        The add endpoint computes the sum of the two specified numeric values.
+      parameters:
+        - name: parameters
+          in: body
+          description: Parameters
+          required: true
+          schema:
+            $ref: "#/definitions/BinaryOperandRequest"
+      tags:
+        - Basic Arithmetic Operations
+      responses:
+        "200":
+          x-gulp-swagger-codegen-outcome: success
+          description: 
+            Numbers added up succesfully.
+          schema:
+            $ref: '#/definitions/ScalarResponse'
+        "500":
+          x-gulp-swagger-codegen-outcome: error
+          description: 
+            Numbers could not be added succesfully.
+          schema:
+            $ref: '#/definitions/Error'
+  /add/{x}/{y}:
+    x-swagger-router-controller: addition
+    post:
+      summary: Add numbers with simple direct path variables
       operationId: addNumbers             # Exported function to call
       description: |
         The add endpoint computes the sum of the two specified numeric values.
       parameters:
         - name: x
           in: path
-          description: First input
+          description: Left operand
           required: true
           type: number
         - name: y
           in: path
-          description: Second input
+          description: Right operand
           required: true
           type: number
       tags:
         - Basic Arithmetic Operations
       responses:
         "200":
+          x-gulp-swagger-codegen-outcome: success
           description: 
             Numbers added up succesfully.
           schema:
             $ref: '#/definitions/ScalarResponse'
         "500":
+          x-gulp-swagger-codegen-outcome: error
           description: 
             Numbers could not be added succesfully.
           schema:
             $ref: '#/definitions/Error'
-        
-definitions:
+
+  /add/bulk:
+    x-swagger-router-controller: addition
+    post:
+      summary: Add numbers with an array of inputs
+      operationId: addNumbersBulk             # Exported function to call
+      description: |
+        The add endpoint computes the sum of the two specified numeric values.
+      parameters:
+        - name: inputs
+          in: body
+          description: Left operand
+          required: true
+          schema:
+            $ref: '#/definitions/ComputationList'
+      tags:
+        - Basic Arithmetic Operations
+      responses:
+        "200":
+          x-gulp-swagger-codegen-outcome: success
+          description: 
+            Numbers added up succesfully.
+          schema:
+            $ref: '#/definitions/ResultList'
+        "500":
+          x-gulp-swagger-codegen-outcome: error
+          description: 
+            Numbers could not be added succesfully.
+          schema:
+            $ref: '#/definitions/Error'
+
+definitions:    
+  BinaryOperandRequest:
+    description: Binary operand parameters
+    type: object
+    required:
+      - leftOperand
+      - rightOperand
+    properties:
+      leftOperand:
+        type: number
+      rightOperand:
+        type: number
+
   ScalarResponse:
     description: Single value outcome of mathematic operation.
     type: number
@@ -52,3 +125,15 @@ definitions:
       message:
         description: Descriptive message.
         type: string
+
+  ComputationList:
+    description: Do multiple additions in one hit.
+    type: array
+    items:
+      $ref: "#/definitions/BinaryOperandRequest"
+
+  ResultList: 
+    description: Bulk result set.
+    type: array
+    items:
+      $ref: "#/definitions/ScalarResponse"
