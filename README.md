@@ -8,12 +8,21 @@ This Github repository is intended as a Node.js starter pack for people wishing 
 API's using the [Swagger](http://swagger.io) contract-first declaration language. The anatomy 
 of this project is:
 
-* /contracts/api.yml - __Swagger API Definition__
-* /src/controllers/  - __API Method Implementation__
+* /contracts/api.yml    - __Swagger API Definition__
+* /src/implementation/  - __API Method Implementation__
+
+You'll need to run `gulp` at least once to generate some additional code for the application to work:
+
+  * /src/controllers      - Automatically generated controllers
+  * /src/definitions      - Request/response definitions
 
 The orchestration of this is done using the Apigee127 package '[swagger-tools](https://github.com/apigee-127/swagger-tools).
 The example implementation contains a simple /add operation that shows how to wire up
 a service. 
+
+The Code generation is provided by the [gulp-swagger-codegen](https://npmjs.com/package/gulp-swagger-codegen) package,
+this package provides a clean abstraction between raw request/response handling and your implementation
+logic.
 
 A more in-depth explanation of how the wire-up of Swagger API calls to your controller methods work
 can be found [here](https://github.com/apigee-127/swagger-tools/blob/master/docs/QuickStart.md).
@@ -29,6 +38,7 @@ The steps to get up and running are:
 * Run the following commands
 
         npm install
+        gulp
         node index
 
 * Point your browser to http://localhost:10010/
